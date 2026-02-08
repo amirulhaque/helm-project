@@ -26,7 +26,12 @@ spec:
           volumeMounts:
             - name: config-volume
               mountPath: /config
+            - name: certs
+              mountPath: /config/certs
       volumes:
         - name: config-volume
           configMap:
             name: {{ .Release.Name }}-config
+        - name: certs
+          configMap:
+            name: app-config
