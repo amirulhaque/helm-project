@@ -1,0 +1,25 @@
+repliCount: 1
+
+
+image:
+  repository: nginx
+  tag: latest
+  pullPolicy: IfNotPresent
+
+
+services:
+  type: ClusterIP
+  port: 80
+
+config:
+  APP_NAME: aanipay
+  LOG_LEVEL: INFO
+
+certs:
+  truststore: aep-truststore.p12
+  keystore: keystore.p12
+
+secret:
+  DB_PASSWORD: "changeme"
+
+

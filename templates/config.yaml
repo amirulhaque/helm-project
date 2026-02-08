@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-config
+data:
+  application.properties: |
+    app.name={{ .Values.config.APP_NAME }}
+    log.level={{ .Values.config.LOG_LEVEL }}
+
+  {{ .Values.certs.trustore }}: |
+    DUMMY_TRUSTSTORE_DATA
+
+  {{ .Values.certs.keystore }}: |
+    DUMMY_KEYSTORE_DATA
